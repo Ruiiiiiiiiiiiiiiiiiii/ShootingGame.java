@@ -3,7 +3,7 @@ import java.util.Vector;
 public class GameFrame extends MyFrame {
 	public void run() {
 		GameWorld.player=new Player(100,300,0,0);
-		addListener(GameWorld.player);
+		addKeyListener(GameWorld.player);
 		GameWorld.playerBullets=new Vector<PlayerBullet>();
 		while(true) {
 			clear();
@@ -14,7 +14,11 @@ public class GameFrame extends MyFrame {
 				PlayerBullet b=GameWorld.playerBullets.get(i);
 				b.draw(this);
 				b.move();
-				i++;
+				if(b.y<0) {
+					GameWorld.playerBullets.remove(i);
+				}else {
+					i++;
+				}
 			}
 			sleep(0.03);
 		}

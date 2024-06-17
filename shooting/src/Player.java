@@ -1,6 +1,7 @@
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Player extends Character  {
+public class Player extends Character implements KeyListener {
 	public Player(double x,double y,double vx,double vy ) {
 		
 		super(x,y,vx,vy);
@@ -14,6 +15,8 @@ public class Player extends Character  {
 		}
 		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
 			GameWorld.playerBullets.add(new PlayerBullet(x,y,0,-10));
+			System.out.println("弾の数="+
+			GameWorld.playerBullets.size());
 		}
 	}
 	public void KeyReleased(KeyEvent e) {
@@ -31,6 +34,11 @@ public class Player extends Character  {
 		super.move();
 		if(x<0) x=0;
 		if(x>370) x=370;
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO 自動生成されたメソッド・スタブ
+		
 	}
 
 }
