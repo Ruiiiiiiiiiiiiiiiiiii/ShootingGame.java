@@ -40,5 +40,11 @@ public class Player extends Character implements KeyListener {
 		// TODO 自動生成されたメソッド・スタブ
 		
 	}
+	public void draw(MyFrame f) {
+		f.setColor(0, 128, 0);
+		f.fillRect(x, y+20, 30, 10);
+		f.setColor(200, 200, 200);
+		f.fillRect(x+10, y, 10, 30);
+	}
 
 }
