@@ -4,5 +4,6 @@ public class PlayerBullet extends Character{
 		//Charecterクラスのコントラスト呼び出し
 		super(x,y,vx,vy);
 	}
+	
 
 }
