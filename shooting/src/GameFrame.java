@@ -61,7 +61,7 @@ public class GameFrame extends MyFrame {
 			int j=0;
 		    int hits=0;
 		while(j<GameWorld.playerBullets.size()) {
-			Enemy e=GameWorld.enemies.get(j);
+			Enemy e =GameWorld.enemies.get(j);
 			if(checkHit(e,b)) {
 				System.out.println("あたり");
 				hits++;

@@ -16,14 +16,15 @@ public class Player extends Character implements KeyListener {
 		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
 			GameWorld.playerBullets.add(new PlayerBullet(x,y,0,-10));
 			System.out.println("弾の数="+
-			GameWorld.playerBullets.size());
+			 GameWorld.playerBullets.size());
 		}
 		if(e.getKeyCode()==KeyEvent.VK_ENTER) {
 			System.out.println("Enterキーが押されました");
 			GameWorld.enterPressed=true;
 		}
 	}
-	public void KeyReleased(KeyEvent e) {
+	@Override
+	public void keyReleased(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_LEFT) {
 			vx=0;
 		}
@@ -39,16 +40,16 @@ public class Player extends Character implements KeyListener {
 		if(x<0) x=0;
 		if(x>370) x=370;
 	}
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-	}
+	
 	public void draw(MyFrame f) {
 		f.setColor(0, 128, 0);
 		f.fillRect(x, y+20, 30, 10);
 		f.setColor(200, 200, 200);
 		f.fillRect(x+10, y, 10, 30);
 	}
+	
+		
+		
+	}
 
-}
+
