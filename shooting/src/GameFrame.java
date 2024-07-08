@@ -39,11 +39,12 @@ public class GameFrame extends MyFrame {
 					GameWorld.score=0;
 					break;
 				}
+				
 			}
 			sleep(0.03);
 			
 		}
-		}
+	  }
 	}
 	public void checkPlayerAndEnemies() {
 		for(int i=0 ; i<GameWorld.enemies.size();i++) {
@@ -60,7 +61,7 @@ public class GameFrame extends MyFrame {
 			PlayerBullet b=GameWorld.playerBullets.get(i);
 			int j=0;
 		    int hits=0;
-		while(j<GameWorld.playerBullets.size()) {
+		while(j<GameWorld.enemies.size()) {
 			Enemy e =GameWorld.enemies.get(j);
 			if(checkHit(e,b)) {
 				System.out.println("あたり");
